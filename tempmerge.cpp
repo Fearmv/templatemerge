@@ -6,31 +6,31 @@
 using namespace std;
 
 //Defined class for less-than comparison
-class Document {
+class Gum {
     int priority;
 public:
-    Document(int priority);
-    Document();
-    friend bool operator< (const Document &l, const Document &r);
-    friend bool operator> (const Document &l, const Document &r);
+    Gum(int priority);
+    Gum();
+    friend bool operator< (const Gum &l, const Gum &r);
+    friend bool operator> (const Gum &l, const Gum &r);
 };
 
-Document::Document(){
+Gum::Gum(){
     priority = 0;
 }
 
-Document::Document(int p){
+Gum::Gum(int p){
     priority = p;
 }
 
 //less than comparison
-bool operator< (const Document &left, const Document &right)
+bool operator< (const Gum &left, const Gum &right)
 {
     return left.priority < right.priority;
 }
 
 //greater than comparison
-bool operator> (const Document &left, const Document &right) {
+bool operator> (const Gum &left, const Gum &right) {
     return left.priority > right.priority;
 }
 
@@ -122,10 +122,10 @@ int main(int argc, char * args[]) {
     merge_sort(d);
     assert(sorted(d));
     
-    vector<Document> e(5);
+    vector<Gum> e(5);
     
     for (int i = 8; i >= 0; i--) {
-        Document doc(i);
+        Gum doc(i);
         e[i] = doc;
     }
     merge_sort(e);
